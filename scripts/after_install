@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /usr/share/nginx/html/food-app
+chmod -R 777 storage
+chmod -R 777 bootstrap/cache/
+cd /usr/share/nginx/html/
+chown -R ec2-user:ec2-user food-app
+cd food-app
+php artisan key:generate
+php artisan config:cache
+php artisan migrate
+php artisan db:seed
