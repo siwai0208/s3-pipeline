@@ -1,4 +1,4 @@
 #!/bin/bash
-systemctl stop mysql
+systemctl stop mysqld.service
 systemctl stop php-fpm.service
 systemctl stop nginx.service

@@ -1,11 +1,18 @@
 #!/bin/bash
+
 cd /usr/share/nginx/html/food-app
 chmod -R 777 storage
 chmod -R 777 bootstrap/cache/
 cd /usr/share/nginx/html/
 chown -R ec2-user:ec2-user food-app
 cd food-app
+sudo -u ec2-user /usr/local/bin/composer update
+cp .env.example .env
+sed -i s/'APP_NAME=Laravel'/'APP_NAME="Food Delivery APP"'/g .env
+sed -i s/'DB_PASSWORD='/'DB_PASSWORD=password'/g .env
+systemctl start mysqld.service
 php artisan key:generate
 php artisan config:cache
 php artisan migrate
 php artisan db:seed
+systemctl stop mysqld.service
