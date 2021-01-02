@@ -14,28 +14,34 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 ## **How to use**
 
 1. launch-templeteを使い、CodeDeployエージェントのインストールされたEC2を1台起動する（マネコン使用）
-
-    EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択<br>
-    アクション > テンプレートからインスタンスを起動<br>
-    ネットワーク設定 > サブネット > public-subnet-1a を選択<br>
-    テンプレートからインスタンスを起動
+    EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択
+```
+  アクション > テンプレートからインスタンスを起動<br>
+  ネットワーク設定 > サブネット > public-subnet-1a を選択<br>
+  テンプレートからインスタンスを起動
+```
 
 2. CodeDeployの作成
 
-- デベロッパー用ツール > CodeDeploy > アプリケーション > アプリケーションの作成<br>
+- デベロッパー用ツール > CodeDeploy > アプリケーション > アプリケーションの作成
+```
   アプリケーション名: laravel-app<br>
   コンピューティングプラットフォーム: EC2/オンプレミス
+```
 
-- 続けて　デプロイグループの作成<br>
+- 続けて　デプロイグループの作成
+```
   デプロイグループ名: laravel-app-dply-grp<br>
   サービスロール: CodeDeployServiceRole<br>
   環境設定: Amazon EC2 インスタンス<br>
   タググループ 1  キー:name 値:codepipeline<br>
   Load balancer: 無効<br>
   デプロイグループの作成
+```
 
 3. CodePipelineの作成
-- デベロッパー用ツール > CodePipeline > パイプライン > パイプラインを作成する<br>
+- デベロッパー用ツール > CodePipeline > パイプライン > パイプラインを作成する
+```
   パイプライン名: s3-pipeline<br>
   サービスロール: 新しいサービスロール<br>
   アーティファクトストア: 作成済みのS3バケットを選択<br>
@@ -47,6 +53,7 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
   アプリケーション名: laravel-app<br>
   デプロイグループ: laravel-app-dply-grp<br>
   パイプラインを作成する<br>
+```
 
 - 作成完了時にpipelineが実施されるが、Zipファイルがなくエラーとなる
 
