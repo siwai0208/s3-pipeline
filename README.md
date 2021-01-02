@@ -17,8 +17,8 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 
 - EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択
 ```
-  アクション > テンプレートからインスタンスを起動<br>
-  ネットワーク設定 > サブネット > public-subnet-1a を選択<br>
+  アクション > テンプレートからインスタンスを起動
+  ネットワーク設定 > サブネット > public-subnet-1a を選択
   テンプレートからインスタンスを起動
 ```
 
@@ -26,34 +26,34 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 
 - デベロッパー用ツール > CodeDeploy > アプリケーション > アプリケーションの作成
 ```
-  アプリケーション名: laravel-app<br>
+  アプリケーション名: laravel-app
   コンピューティングプラットフォーム: EC2/オンプレミス
 ```
 
 - 続けて　デプロイグループの作成
 ```
-  デプロイグループ名: laravel-app-dply-grp<br>
-  サービスロール: CodeDeployServiceRole<br>
-  環境設定: Amazon EC2 インスタンス<br>
-  タググループ 1  キー:name 値:codepipeline<br>
-  Load balancer: 無効<br>
+  デプロイグループ名: laravel-app-dply-grp
+  サービスロール: CodeDeployServiceRole
+  環境設定: Amazon EC2 インスタンス
+  タググループ 1  キー:name 値:codepipeline
+  Load balancer: 無効
   デプロイグループの作成
 ```
 
 3. CodePipelineの作成
 - デベロッパー用ツール > CodePipeline > パイプライン > パイプラインを作成する
 ```
-  パイプライン名: s3-pipeline<br>
-  サービスロール: 新しいサービスロール<br>
-  アーティファクトストア: 作成済みのS3バケットを選択<br>
-  ソースプロバイダー: Amazon S3<br>
-  バケット: 作成済みのS3バケットを選択<br>
-  S3 オブジェクトキー: laravel-app.zip<br>
-  ビルドステージをスキップ<br>
-  デプロイプロバイダー: AWS CodeDeploy<br>
-  アプリケーション名: laravel-app<br>
-  デプロイグループ: laravel-app-dply-grp<br>
-  パイプラインを作成する<br>
+  パイプライン名: s3-pipeline
+  サービスロール: 新しいサービスロール
+  アーティファクトストア: 作成済みのS3バケットを選択
+  ソースプロバイダー: Amazon S3
+  バケット: 作成済みのS3バケットを選択
+  S3 オブジェクトキー: laravel-app.zip
+  ビルドステージをスキップ
+  デプロイプロバイダー: AWS CodeDeploy
+  アプリケーション名: laravel-app
+  デプロイグループ: laravel-app-dply-grp
+  パイプラインを作成する
 ```
 
 - 作成完了時にpipelineが実施されるが、Zipファイルがなくエラーとなる
