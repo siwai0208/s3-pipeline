@@ -13,7 +13,7 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 
 ## **How to use**
 
-1. launch-templeteを使い、CodeDeployエージェントのインストールされたEC2を1台起動する（マネコン使用）
+**1. launch-templeteを使い、CodeDeployエージェントのインストールされたEC2を1台起動する（マネコン使用）**
 
 - EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択
 ```
@@ -22,7 +22,7 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
   テンプレートからインスタンスを起動
 ```
 
-2. CodeDeployの作成
+**2. CodeDeployの作成**
 
 - デベロッパー用ツール > CodeDeploy > アプリケーション > アプリケーションの作成
 ```
@@ -40,7 +40,7 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
   デプロイグループの作成
 ```
 
-3. CodePipelineの作成
+**3. CodePipelineの作成**
 - デベロッパー用ツール > CodePipeline > パイプライン > パイプラインを作成する
 ```
   パイプライン名: s3-pipeline
@@ -58,7 +58,7 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 
 - 作成完了時にpipelineが実施されるが、Zipファイルがなくエラーとなる
 
-4. Zipファイルの作成
+**4. Zipファイルの作成**
 
 - ソースコードを準備、今回は[Laravel-sample-app](https://github.com/siwai0208/food-app)を使用
 
