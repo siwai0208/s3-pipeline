@@ -14,7 +14,8 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 ## **How to use**
 
 1. launch-templeteを使い、CodeDeployエージェントのインストールされたEC2を1台起動する（マネコン使用）
-    EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択
+
+- EC2 ダッシュボード > 起動テンプレート > Codepipeline-template を選択
 ```
   アクション > テンプレートからインスタンスを起動<br>
   ネットワーク設定 > サブネット > public-subnet-1a を選択<br>
@@ -83,8 +84,10 @@ You have to execute [**VPC**](https://github.com/siwai0208/cloudformation/tree/m
 ```
 
 - デベロッパー用ツール > CodePipeline > パイプライン > s3-pipeline
-<br>Source 成功しました
-<br>↓
-<br>Deploy 成功しました
+```
+  Source 成功しました
+  ↓
+  Deploy 成功しました
+```
 
 - EC2のパブリックIPにHTTPアクセスし、アプリが表示されることを確認する
