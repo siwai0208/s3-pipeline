@@ -9,7 +9,7 @@ S3へのソースコード（Zip）のアップデートをトリガーに、EC2
 * scripts
 
 ## **Dependency**
-You have to execute [**launch-templete**](https://github.com/siwai0208/cloudformation/tree/main/launch-templete) stack before using this stack
+You have to execute [**launch-templete**](https://github.com/siwai0208/cloudformation/tree/main/launch-templete) stack and have your own S3bucket
 
 ## **How to use**
 
